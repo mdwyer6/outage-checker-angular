@@ -8,12 +8,14 @@
   </head>
   <body ng-app='outage-checker'>
     <div ng-controller='formController'>
-      <input type='text' ng-model='url' name='url'></input>
-      <button ng-click=>Submit</button>
+      <input type='text' ng-model='url' name='url' placeholder='Enter URL'></input>
+      <button ng-click='submit(url)'>Submit</button>
       <br>
-      <span>{{$scope.up}}</span>
+      <span>{{up}}</span>
     </div>
     <script src="/angular/angular.js"></script>
     <script src='App/app.js'></script>
+    <script src='App/services.js'></script>
+
   </body>
 </html>

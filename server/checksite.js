@@ -1,12 +1,13 @@
 var http = require('http');
+var request = require('request');
 
 module.exports.checkAlive = function(url, callback) {
-  http.get(url, (data) => {
-    if (data.statusCode !== 200) {
-      callback(err);
+  request(url, function(err, res, body) {
+    if(!err && res.statusCode === 200) {
+      callback(null, res);
       return;
     }
-
-    callback(null, data);
+    
+    callback(err);
   })
 }
