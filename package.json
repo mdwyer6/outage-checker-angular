@@ -2,20 +2,23 @@
   "name": "outage-checker",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "devDependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "babel-register": "^6.7.2",
     "nodemon": "^1.11.0",
     "react-scripts": "0.8.1"
   },
   "dependencies": {
+    "angular": "^1.5.9",
     "express": "^4.14.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "mongodb": "^2.2.12",
+    "mongoose": "^4.7.1",
+    "request": "^2.69.0"
   },
   "scripts": {
-    "start": "nodemon server/server.js",
-    "react start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "nodemon server/server.js"
   }
 }
