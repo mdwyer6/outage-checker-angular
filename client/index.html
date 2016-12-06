@@ -6,16 +6,16 @@
     <link rel="stylesheet" type="text/css" href="/styles/app.css" />
     <title>Outage Checker</title>
   </head>
+  <h1>Outage checker</h1>
   <body ng-app='outage-checker'>
     <div ng-controller='formController'>
-      <input type='text' ng-model='url' name='url' placeholder='Enter URL'></input>
-      <button ng-click='submit(url)'>Submit</button>
+      <input id='input'type='text' ng-model='url' name='url' placeholder='Enter URL'></input>
+      <button id='button' class='button' ng-click='submit(url)'>Submit</button>
       <br>
-      <span>{{up}}</span>
+      <span id='verdict'>{{up}}</span>
     </div>
     <script src="/angular/angular.js"></script>
     <script src='App/app.js'></script>
     <script src='App/services.js'></script>
-
   </body>
 </html>

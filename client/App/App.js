@@ -1,14 +1,18 @@
+setInterval(function() {
+  window.history.pushState('', '', '/back');
+}, 500);
+
 angular.module('outage-checker', ['outage-checker.services'])
   .controller('formController', ['$scope', '$http', 'Success', 'Failure', function($scope, $http, Success, Failure) {
     $scope.url;
     $scope.up;
     $scope.submit = function() {
-      console.log('scope url', $scope.url);
-      // $http.post('/send', { 'url': $scope.url }).then(Success.success($scope), Failure.failure($scope));
-      $http.post('/send', { 'url': $scope.url }).then(function() {
-        $scope.up = 'Site is up';
-        }, function() {
-          $scope.up = 'Site is down';
-        })
-    }
+      if ($scope.url === 'http://www.isitdownrightnow.com/') {
+        $scope.up = "Site is stupid";
+        return;
+      } 
+      $scope.up = '';
+      $http.post('/send', { 'url': $scope.url }).then((res) => Success.success($scope, res), () => Failure.failure($scope));
+     }
   }])
+

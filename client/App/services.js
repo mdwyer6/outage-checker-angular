@@ -1,8 +1,9 @@
 angular.module('outage-checker.services', [])
   .factory('Success', function() {
     return {
-    success: function(scope) {
-      return scope.up = 'Site is up';
+    success: function(scope, res) {
+      
+      return scope.up = res.data;
     }
   }
   })
